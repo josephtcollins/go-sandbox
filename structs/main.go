@@ -39,6 +39,10 @@ func (p person) print() {
 	fmt.Printf("%+v\n", p)
 }
 
-func (p &person) updateName(newFirstName string) {
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
+}
+
+func (p *person) updateNameShortcut(newFirstName string) {
 	p.firstName = newFirstName
 }
